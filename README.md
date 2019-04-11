@@ -1,3 +1,4 @@
+# AcademIA
 <p align="center"><img src="https://github.com/R-Stefano/academIA/blob/master/img.png" /></p>
 
 The project borns with the idea of developing an Intelligent Scientific creative engine able to providing insights about a scientific area of interest scanning and learning the related literature. 
@@ -21,7 +22,7 @@ cd academia
 
 Install the required packages
 ```
-python3 -m pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 
 Now you are ready to help us ;)
