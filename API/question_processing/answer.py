@@ -10,15 +10,16 @@ class Answer:
         self.question = question         
 
     def calculateTopSentences(self,original_text, processed_text):
-        #This function determines which sentences are the top ranked
-       for idx, value in enumerate(self.top_similarities):
-            if (sentence_similarity >= value):
-                self.top_similarities[idx+1:]=self.top_similarities[idx:len(self.top_similarities)-1]
-                self.top_similarities[idx]=sentence_similarity
-                self.top_sentences[idx+1:]=self.top_sentences[idx:len(self.top_sentences)-1]
-                self.top_sentences[idx]=original_text[s_idx]
-                break
-
+        for s_idx, sentence in enumerate(processed_text):
+            sentence_similarity = self.getSimilarityIndex(sentence)
+            for idx, value in enumerate(self.top_similarities):
+                if (sentence_similarity >= value):
+                    self.top_similarities[idx+1:]=self.top_similarities[idx:len(self.top_similarities)-1]
+                    self.top_similarities[idx]=sentence_similarity
+                    self.top_sentences[idx+1:]=self.top_sentences[idx:len(self.top_sentences)-1]
+                    self.top_sentences[idx]=original_text[s_idx]
+                    break
+                
     def getSimilarityIndex(self,sentence):
         #This function calculates how much a sentence resembles the question
         try:
