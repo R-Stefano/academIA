@@ -10,6 +10,7 @@ class Answer:
         self.question = question         
 
     def calculateTopSentences(self,original_text, processed_text):
+        #This function determines which sentences are the top ranked
         for s_idx, sentence in enumerate(processed_text):
             sentence_similarity = self.getSimilarityIndex(sentence)
             for idx, value in enumerate(self.top_similarities):
