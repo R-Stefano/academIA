@@ -44,7 +44,8 @@ class Answer:
                 else:
                     #If the sentence_similarity is higher than the third one only
                     self.third_similarity = sentence_similarity
-                    self.third_sentence = sentence                        
+                    self.third_sentence = sentence
+                    
         
             
     def getSimilarityIndex(self,sentence):
